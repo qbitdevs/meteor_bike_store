@@ -1,3 +1,17 @@
 template(name='my_events')
   +top_nav
-  h1 Hola
+  .row
+    .col.s12
+      each my_events
+        ul.collection
+          li.collection-item.avatar
+            .col.l10.s10.m10
+              i.material-icons.circle.cyan.lighten-1 event
+              span.title {{tittle}}
+              p
+                | {{description}}, fecha: {{formatDateTable date}}, locaci&oacute;n: {{address}}
+            .col.l2.s2.m2
+              a#delete-movement-link(href="#!")
+                i.material-icons delete
+              a#delete-movement-link(href="#!")
+                i.material-icons edit
