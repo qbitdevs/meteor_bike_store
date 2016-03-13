@@ -3,7 +3,7 @@ template(name="admin_products")
   .row
     .col.s12
       .collection.z-depth-2
-        a.right.btn-floating.btn-large.waves-effect.waves-light.blue.darken-1
+        a#add_products.right.btn-floating.btn-large.waves-effect.waves-light.blue.darken-1.modal-trigger
           i.material-icons add
         unless exist_products
           p.center-align
@@ -12,13 +12,43 @@ template(name="admin_products")
               i.medium.material-icons directions_bike
             br
         else
-          a.collection-item(href='#!')
-            | Alan
-            span.badge 1
-          a.collection-item(href='#!')
-            | Alan
-            span.new.badge 4
-          a.collection-item(href='#!') Alan
-          a.collection-item(href='#!')
-            | Alan
-            span.badge 14
+          each products
+            a.collection-item(href='#!')
+              | {{name}}
+              span.badge {{quantity}}
+            
+template(name='create_product')
+  .row
+    form.col.s12
+      .row
+        .input-field.col.s6
+          input#product_name.validate(type='text')
+          label(for='product_name') Nombre
+        .input-field.col.s6
+          select#product_brands
+            option(value='N', disabled='', selected='') Seleccionar marca
+            each product_brands
+              option(value='{{name}}') {{name}}
+      .row
+        .input-field.col.s6
+          input#product_cost.validate(type='text')
+          label(for='product_cost') Precio
+        .input-field.col.s6
+          input#product_quantity.validate(type='number')
+          label(for='product_quantity') Cantidad
+      .row
+        .input-field.col.s6
+          select#product_categories
+            option(value='N', disabled='', selected='') Seleccionar categoria
+            each product_categories
+              option(value='{{name}}') {{name}}
+        .input-field.col.s3
+          input#product_active.validate(type='checkbox')
+          label(for='product_active') Activado
+        .input-field.col.s3
+          input#product_offer.validate(type='checkbox')
+          label(for='product_offer') Oferta
+      .row
+        .input-field.col.s12
+          textarea#product_description.materialize-textarea
+          label(for='product_description') Descripci&oacute;n
