@@ -4,9 +4,10 @@ template(name='product_detail')
     .col.l12.m12.s12
       .row.detail-hero
         .col.m4.s12
-          img.materialboxed(src='images/accesories/1.jpg')
+          img.materialboxed(src='/images/accesories/1.jpg')
         .col.m8.s12
-          h1 Traba U Onguard Brute 8000
+          h1 
+            | {{exist_product.name}}
           h4 $ 40.000
           a.waves-effect.waves-light.btn Comprar
           p.product-heading Der iRobot Roomba 651 - Der zuverlässige Helfer für Ihren Boden.
@@ -19,7 +20,8 @@ template(name='product_detail')
                 th Marca
                 td
                   strong
-                    strike Shimano
+                    strike 
+                      | {{brand}}
               tr
                 th Categoria
                 td
