@@ -9,6 +9,7 @@ Template.register.events({
     profile.last_name = $('#last_name').val();
     profile.gender = $( "#gender option:selected" ).val();
     profile.age = $('#age').val();
+    profile.admin = false;
     Meteor.call('user_exists', user.email, function(error, result){
       if(result){
         Materialize.toast("El correo ya existe", 1000, 'red');

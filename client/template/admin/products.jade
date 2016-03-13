@@ -1,0 +1,24 @@
+template(name="admin_products")
+  +navbar_admin
+  .row
+    .col.s12
+      .collection.z-depth-2
+        a.right.btn-floating.btn-large.waves-effect.waves-light.blue.darken-1
+          i.material-icons add
+        unless exist_products
+          p.center-align
+            br
+            h4 No hay productos... 
+              i.medium.material-icons directions_bike
+            br
+        else
+          a.collection-item(href='#!')
+            | Alan
+            span.badge 1
+          a.collection-item(href='#!')
+            | Alan
+            span.new.badge 4
+          a.collection-item(href='#!') Alan
+          a.collection-item(href='#!')
+            | Alan
+            span.badge 14

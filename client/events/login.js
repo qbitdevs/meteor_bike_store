@@ -17,8 +17,12 @@ Template.login.events({
           $( "#email" ).focus();
         }
       }
-      if (Router.current().route.getName() === 'login.show') {
-        return Router.go('store.show')
+      if (Router.current().route.getName() === 'login.show'){
+        if(Meteor.user().profile.admin){
+          return Router.go('admin.show')
+        }else {
+          return Router.go('store.show')
+        }
       }
     });
   }
