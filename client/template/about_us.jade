@@ -1,0 +1,27 @@
+template(name='about_us')
+  +navbar
+  .row
+    +sidenav_left
+    .col.l8.m4.s4
+      .slider.about_us_top
+        ul.slides
+          li
+            img(src='images/nosotros.jpg')
+            .caption.center-align
+              img.circle.responsive-img.logo-about-size(src='images/logo.png', alt='BikeStore')
+              h5.light.grey-text.text-lighten-3.flow-text
+                | Empresa formada por profesionales en el área Informática, Comercial y mecánica
+          li
+            img(src='images/nosotros2.jpg')
+            .caption.left-align
+              h3 BikeStore
+              h5.light.grey-text.text-lighten-3.flow-text 
+                | Sólidos y amplios conocimientos en bicicletas
+          li
+            img(src='images/nosotros3.jpg')
+            .caption.right-align
+              h3 Nuestro negocio
+              h5.light.grey-text.text-lighten-3 Diseño, programación, marketing y marketing en Internet.
+
+    +sidenav_right
+  +footer
