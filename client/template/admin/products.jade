@@ -16,6 +16,8 @@ template(name="admin_products")
             a.collection-item(href='#!')
               | {{name}}
               span.badge {{quantity}}
+            a.btn-floating.btn-large.waves-effect.waves-light.blue.darken-1.modal-trigger
+              i.material-icons.delete-product delete
             
 template(name='create_product')
   .row
@@ -52,3 +54,8 @@ template(name='create_product')
         .input-field.col.s12
           textarea#product_description.materialize-textarea
           label(for='product_description') Descripci&oacute;n
+
+
+template(name='delete_product')
+  .row
+    h4  &#191;Est&aacute; seguro que desea elimiar este producto&#63;
