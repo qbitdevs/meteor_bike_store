@@ -11,7 +11,7 @@ Template.login.events({
           $('#password').val("");
           $( "#email" ).focus();
         }
-        if (erro.reason=="Incorrect password"){
+        if (error.reason=="Incorrect password"){
           Materialize.toast('La contraseña es incorrecta', 1000, 'red')
           $('#password').val("");
           $( "#email" ).focus();

@@ -1,0 +1,34 @@
+template(name="navbar")
+  .navbar-fixed
+    nav
+      .nav-wrapper
+        a.brand-logo(href='#!') Logo
+        a.button-collapse(href='#', data-activates='mobile-demo')
+          i.material-icons menu
+          a.brand-logo(href='#!') Logo
+        ul.right.hide-on-med-and-down
+          li
+            a#home(href='!#')
+              | Inicio
+          li
+            a#about_us(href='!#')
+              | Nosotros
+          li
+            a#contact(href='!#')
+              | Contacto
+          li
+            a#logout(href='!#') 
+              i.material-icons exit_to_app
+        ul#mobile-demo.side-nav
+          li
+            a#home(href='!#')
+              | Inicio
+          li
+            a#about_us(href='!#')
+              | Nosotros
+          li
+            a#contact(href='!#')
+              | Contacto
+          li
+            a#logout(href='!#') 
+              i.material-icons exit_to_app
