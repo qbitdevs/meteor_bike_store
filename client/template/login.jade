@@ -1,0 +1,18 @@
+template(name='login')
+  .row
+    .card.col.s6.offset-s3.center-align
+      .card-content
+        form#login.col.s12
+          .row
+            span.card-title Iniciar Sesi&oacute;n 
+          .row  
+            .input-field.col.s12
+              input#email.validate(type='email')
+              label(for='email') Correo
+          .row
+            .input-field.col.s12
+              input#password.validate(type='password')
+              label(for='password') Contrase&ntilde;a
+          .row
+            .input-field.col.s12
+              button.btn.btn-large.waves-effect.waves-light.col.s12(type="submit") Iniciar Ses&oacute;n 

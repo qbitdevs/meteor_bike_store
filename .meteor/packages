@@ -20,11 +20,8 @@ accounts-password
 mquandalle:jade
 meteorhacks:aggregate
 poetic:materialize-scss
-accounts-facebook
 accounts-base
 accounts-ui-unstyled
-facebook
-service-configuration
 email
 iron:router
 momentjs:moment
