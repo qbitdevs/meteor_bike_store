@@ -23,7 +23,7 @@ Template.register.events({
           });
         }
         else{
-          Materialize.toast("Todos los campos son obligatorios", 1000, 'red');
+          Materialize.toast("Todos los campos son obligatorios", 1000, 'black');
           $('#email').val("");
           $('#password').val("");
           $('#first_name').val("");

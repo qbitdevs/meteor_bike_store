@@ -6,13 +6,13 @@ Template.login.events({
     Meteor.loginWithPassword(email.toLowerCase(), password, function(error) {
       if (error) {
         if (error.reason=="User not found"){
-          Materialize.toast('El correo no existe', 1000, 'red')
+          Materialize.toast('El correo no existe', 1000, 'black')
           $('#email').val("");
           $('#password').val("");
           $( "#email" ).focus();
         }
         if (error.reason=="Incorrect password"){
-          Materialize.toast('La contraseña es incorrecta', 1000, 'red')
+          Materialize.toast('La contraseña es incorrecta', 1000, 'blak')
           $('#password').val("");
           $( "#email" ).focus();
         }
