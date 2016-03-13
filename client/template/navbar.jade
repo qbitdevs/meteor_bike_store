@@ -2,32 +2,34 @@ template(name="navbar")
   .navbar-fixed
     nav
       .nav-wrapper
-        a.brand-logo(href='#!') Logo
+        a.brand-logo(href='#!')
+          img.circle.responsive-img.logo-size(src='images/logo2.png', alt='BikeStore')
         a.button-collapse(href='#', data-activates='mobile-demo')
           i.material-icons menu
-          a.brand-logo(href='#!') Logo
+          a.brand-logo(href='#!')
+            img.circle.responsive-img.logo-size(src='images/logo2.png', alt='BikeStore')
         ul.right.hide-on-med-and-down
           li
-            a#home(href='!#')
+            a#home(href='/')
               | Inicio
           li
-            a#about_us(href='!#')
+            a#about_us(href='about_us')
               | Nosotros
           li
-            a#contact(href='!#')
+            a#contact(href='contact')
               | Contacto
           li
             a#logout(href='!#') 
               i.material-icons exit_to_app
         ul#mobile-demo.side-nav
           li
-            a#home(href='!#')
+            a#home(href='/')
               | Inicio
           li
-            a#about_us(href='!#')
+            a#about_us(href='about_us')
               | Nosotros
           li
-            a#contact(href='!#')
+            a#contact(href='contact')
               | Contacto
           li
             a#logout(href='!#') 
