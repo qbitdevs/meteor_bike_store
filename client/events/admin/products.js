@@ -30,5 +30,31 @@ Template.admin_products.events({
         }
       }
     });
+  },
+  'click .material-icons.delete-product': function(event){
+    var id = $(this)[0]['_id'];
+    MaterializeModal.form({
+      title: "Eliminar producto",
+      bodyTemplate: "delete_product",
+      fixedFooter: true,
+      submitLabel: "Borrar",
+      closeLabel: "Cancelar",
+      callback: function(error, response) {
+        if (response.submit) {
+          if(id.length != 0){
+            Meteor.call('remove_product', id, function(error, result){
+              if(error){
+                console.log('No se ha podido eliminar');
+              }
+              console.log(result);
+            });
+          }
+          else{
+            Materialize.toast("No se ha encontrado el elemento a eliminar", 1000, 'back');
+          }
+        }
+      }
+    });
   }
 });
+

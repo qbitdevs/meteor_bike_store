@@ -33,5 +33,19 @@ Meteor.methods({
     else {
       return false;
     }
+  },
+  'remove_product': function(id){
+    var product = Products.findOne({
+      _id: id
+    });
+    if (product) {
+      Products.findOne({
+        _id: id
+      });
+      return true;
+    } 
+    else {
+      return false;
+    }
   }
 });
