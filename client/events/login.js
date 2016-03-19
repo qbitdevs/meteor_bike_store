@@ -19,6 +19,7 @@ Template.login.events({
       }
       if (Router.current().route.getName() === 'login.show'){
         if(Meteor.user().profile.admin){
+          Session.set('category', '0');
           return Router.go('admin.show')
         }else {
           return Router.go('store.show')
