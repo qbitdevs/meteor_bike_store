@@ -35,17 +35,22 @@ Meteor.methods({
     }
   },
   'remove_product': function(id){
-    var product = Products.findOne({
-      _id: id
+    Products.remove({_id: id});
+  },
+  'update_product': function(id, name, brand, cost, quantity, category, activated, offer, description){
+    Products.update({_id: id},{
+      $set:{
+        name: name,
+        brand: brand,
+        cost: cost,
+        quantity: quantity,
+        category: category,
+        activated: activated,
+        offer: offer,
+        description: description,
+        user_id: Meteor.userId()
+      }
     });
-    if (product) {
-      Products.findOne({
-        _id: id
-      });
-      return true;
-    } 
-    else {
-      return false;
-    }
+    return true;
   }
 });
