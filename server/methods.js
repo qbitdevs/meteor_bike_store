@@ -99,7 +99,8 @@ Meteor.methods({
           amount: 2000,
           bank: 'Banco Estado',
           number: '12312321',
-          date: new Date()
+          date: new Date(),
+          verified: false
         }
       });
     }else{
