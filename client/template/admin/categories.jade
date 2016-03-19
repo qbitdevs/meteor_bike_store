@@ -2,8 +2,9 @@ template(name="admin_categories")
   +navbar_admin
   .row
     .col.s12
-      a#add_categories.right.btn-floating.btn-large.blue.darken-1.after_header 
-        i.material-icons add
+      .fixed-action-btn
+        a#add_categories.right.btn-floating.btn-large.blue.darken-1
+          i.material-icons add
       ul.collection
         li.collection-item
           unless exist_categories
