@@ -34,8 +34,25 @@ Meteor.methods({
       return false;
     }
   },
+  'insert_brand': function(name){
+    var brand = Brands.findOne({
+      name: name,
+    });
+    if(!brand || brand.length == 0){
+      Brands.insert({
+        name: name
+      });
+      return true;
+    }
+    else {
+      return false;
+    }
+  },
   'remove_product': function(id){
     Products.remove({_id: id});
+  },
+  'remove_brand': function(id){
+    Brands.remove({_id: id});
   },
   'update_product': function(id, name, brand, cost, quantity, category, activated, offer, description){
     Products.update({_id: id},{
@@ -49,6 +66,14 @@ Meteor.methods({
         offer: offer,
         description: description,
         user_id: Meteor.userId()
+      }
+    });
+    return true;
+  },
+  'update_brand': function(id, name){
+    Brands.update({_id: id},{
+      $set:{
+        name: name,
       }
     });
     return true;

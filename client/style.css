@@ -14,12 +14,13 @@
   margin-top: 50px;
 }
 
-.list_products{
+.list_products,
+.list_brands{
   cursor:pointer;
   cursor: hand;
 }
 
-#sidenav_left, #product{
+#sidenav_left, #product,#brand{
   margin-top: 20px;
 }
 
