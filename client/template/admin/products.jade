@@ -2,25 +2,28 @@ template(name="admin_products")
   +navbar_admin
   .row
     .col.s12
-      .collection.z-depth-2
-        a#add_products.right.btn-floating.btn-large.waves-effect.waves-light.blue.darken-1.modal-trigger
+      .fixed-action-btn
+        a#add_products.right.btn-floating.btn-large.blue.darken-1
           i.material-icons add
-        unless exist_products
-          p.center-align
-            br
-            h4 No hay productos... 
-              i.medium.material-icons directions_bike
-            br
-        else
-          each products
-            a.collection-item(href='#!')
-              | {{name}}
-              span.badge {{quantity}}
-              a
-                i.material-icons.edit-product edit
-              a
-                i.material-icons.delete-product delete
-            
+      ul.collection
+        li.collection-item
+          unless exist_products
+            p.center-align
+              br
+              h4 No hay productos... 
+                i.medium.material-icons directions_bike
+              br
+          else
+            each products
+              li.collection-item
+                | {{name}}
+                | {{quantity}}
+                span.badge
+                  a.list_products
+                    i.material-icons.edit-product edit
+                  a.list_products
+                    i.material-icons.delete-product delete
+              
 template(name='edit_product')
   .row
     form.col.s12
