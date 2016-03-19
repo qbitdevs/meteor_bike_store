@@ -10,17 +10,19 @@
   margin-top: 50px;
 }
 
+.after_header {
+  margin-top: .5%;
+}
 .contact_margin{
   margin-top: 50px;
 }
 
-.list_products,
-.list_brands{
+.list_products, .list_categories{
   cursor:pointer;
   cursor: hand;
 }
 
-#sidenav_left, #product,#brand{
+#sidenav_left, #product, #categories{
   margin-top: 20px;
 }
 
