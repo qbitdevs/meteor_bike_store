@@ -48,8 +48,25 @@ Meteor.methods({
       return false;
     }
   },
+  'insert_brand': function(name){
+    var brand = Brands.findOne({
+      name: name,
+    });
+    if(!brand || brand.length == 0){
+      Brands.insert({
+        name: name,
+      });
+      return true;
+    }
+    else {
+      return false;
+    }
+  },
   'remove_product': function(id){
     Products.remove({_id: id});
+  },
+  'remove_brand': function(id){
+    Brands.remove({_id: id});
   },
   'remove_category': function(id){
     Categories.remove({_id: id});
@@ -72,6 +89,14 @@ Meteor.methods({
   },
   'update_category': function(id, name){
     Categories.update({_id: id},{
+      $set:{
+        name: name,
+      }
+    });
+    return true;
+  },
+  'update_brand': function(id, name){
+    Brands.update({_id: id},{
       $set:{
         name: name,
       }

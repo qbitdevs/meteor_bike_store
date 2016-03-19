@@ -14,12 +14,12 @@
   margin-top: 50px;
 }
 
-.list_products, .list_categories{
+.list_products, .list_brands, .list_categories{
   cursor:pointer;
   cursor: hand;
 }
 
-#sidenav_left, #product, #categories{
+#sidenav_left, #product, #brands, #categories{
   margin-top: 20px;
 }
 
