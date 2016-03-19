@@ -1,0 +1,40 @@
+template(name="admin_categories")
+  +navbar_admin
+  .row
+    .col.s12
+      a#add_categories.right.btn-floating.btn-large.blue.darken-1.after_header 
+        i.material-icons add
+      ul.collection
+        li.collection-item
+          unless exist_categories
+            p.center-align
+              br
+              h4 No hay categor&iacute;as... 
+                i.medium.material-icons directions_bike
+              br
+          else
+            each categories
+              li.collection-item
+                | {{name}}
+                span.badge
+                  a.list_categories
+                    i.material-icons.edit-category edit
+                  a.list_categories
+                    i.material-icons.delete-category delete
+  +footer_admin
+              
+template(name='edit_category')
+  .row
+    .input-field.col.s6
+      input#category_name(type='text' value='{{params.name}}')
+      label(for='category_name' class='active') Nombre
+
+template(name='create_category')
+  .row
+    .input-field.col.s6
+      input#category_name(type='text')
+      label(for='category_name') Nombre
+
+template(name='delete_category')
+  .row
+    h5  &#191;Est&aacute; seguro que desea elimiar esta categor&iacute;a&#63;
