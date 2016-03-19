@@ -1,21 +1,20 @@
 template(name='login')
   .row
-    .card.col.s6.offset-s3.center-align
+    .card.col.s6.offset-s3.center-align#contenedor
       .card-content
         form#login.col.s12
           .row
-            span.card-title Iniciar Sesi&oacute;n 
-          .row  
+            h4.blue-text.text-darken-2 Iniciar Sesi&oacute;n 
+          .row 
             .input-field.col.s12
-              input#email.validate(type='email')
+              input#email(type='email')
               label(for='email') Correo
           .row
             .input-field.col.s12
-              input#password.validate(type='password')
+              input#password(type='password')
               label(for='password') Contrase&ntilde;a
           .row
-            .input-field.col.s12
-              button.btn.btn-large.waves-effect.waves-light.col.s12(type="submit") Iniciar Ses&oacute;n 
+            button.btn.btn-large.waves-effect.waves-light.col.s12.blue.darken-2(type="submit") Iniciar Sesi&oacute;n 
           .row
             .col.s12.center-alig
               a(href="/register") Crear cuenta de usuario

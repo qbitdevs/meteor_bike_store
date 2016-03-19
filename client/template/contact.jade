@@ -1,23 +1,24 @@
 template(name='contact')
   +navbar
   .row
-    +sidenav_left
-    .col.l8.m4.s4
+    //+sidenav_left
+    .col.l8.offset-l2.m12.s12
       h3 Escríbenos
       .row
         form.col.s12
           .row
             .input-field.col.s6
               i.material-icons.prefix account_circle
-              input#icon_prefix.validate(type='text')
-              label(for='icon_prefix') First Name
+              input#icon_prefix(type='text')
+              label(for='icon_prefix') Nombre
             .input-field.col.s6
               i.material-icons.prefix phone
-              input#icon_telephone.validate(type='tel')
-              label(for='icon_telephone') Telephone
+              input#icon_telephone(type='tel')
+              label(for='icon_telephone') Telefono
           .row
             .input-field.col.s12
               textarea#textarea1.materialize-textarea
-              label(for='textarea1') Textarea
-    //+sidenav_right
+              label(for='textarea1') Mensaje
+          .row
+            button.btn.btn-large.waves-effect.waves-light.col.s12.blue.darken-2(type="submit") Enviar
   +footer

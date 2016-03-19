@@ -1,34 +1,33 @@
 template(name='register')
   .row
-    .card.col.s10.offset-s1.center-align
+    .card.col.s10.offset-s1.center-align#contenedor2
       .card-content
         form#register.col.s12
           .row
-            span.card-title Registro
+            h4.blue-text.text-darken-2 Registro 
           .row
             .input-field.col.s6
-              input#first_name.validate(type='text')
+              input#first_name(type='text')
               label(for='first_name') Nombre
             .input-field.col.s6
-              input#last_name.validate(type='text')
+              input#last_name(type='text')
               label(for='last_name') Apellido
           .row
             .input-field.col.s6
-              select#gender
+              select#gender.browser-default
                 option(value='N', disabled='', selected='') Selecciona genero
                 option(value='F') Femenino
                 option(value='M') Masculino
-              label Seleccionar
             .input-field.col.s6
-              input#age.validate(type='number')
+              input#age(type='number')
               label(for='age') Edad 
           .row  
             .input-field.col.s6
-              input#email.validate(type='email')
+              input#email(type='email')
               label(for='email') Correo
             .input-field.col.s6
-              input#password.validate(type='password')
+              input#password(type='password')
               label(for='password') Contrase&ntilde;a
           .row
             .input-field.col.s12
-              button.btn.btn-large.waves-effect.waves-light.col.s12(type="submit") Registrarte
+              button.btn.btn-large.waves-effect.waves-light.col.s12.blue.darken-2(type="submit") Registrarte

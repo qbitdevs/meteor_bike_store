@@ -52,5 +52,56 @@ Meteor.methods({
       }
     });
     return true;
+  },
+  'add_product_car': function(product_id, quantity){
+    var orders = Orders.findOne({user_id: Meteor.userId(), pago: { $exists: false}});
+    var product = Products.findOne({_id: product_id})
+    if(orders == undefined){
+      console.log('entre');
+      Orders.insert({
+        user_id: Meteor.userId(),
+        products: [
+          {
+            id: product._id,
+            name: product.name,
+            quantity: quantity,
+            unit_cost: product.cost,
+            cost: quantity * product.cost ,
+            add_at: new Date()
+          }
+        ]
+      });
+    }else{
+      var flag = false;
+      orders.products.forEach(function(value, index){
+        if(value.id == product._id){
+          flag = true;
+          orders.products[index].quantity += quantity;
+          orders.products[index].cost += quantity * product.cost;
+        }
+      });
+      if(flag){
+        Orders.update(orders._id,{
+          $set: {
+            products: orders.products
+          }
+        });
+
+      }else{
+        Orders.update(orders._id,{
+          $addToSet: {
+            products: {
+              id: product._id,
+              name: product.name,
+              quantity: quantity,
+              unit_cost: product.cost,
+              cost: quantity * product.cost,
+              add_at: new Date()
+            }
+          }
+        });
+      }
+    }
+    return true;
   }
 });

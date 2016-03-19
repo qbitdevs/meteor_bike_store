@@ -18,7 +18,7 @@ Template.admin_products.events({
           var description = $('#product_description').val()
           console.log(name, brand, cost, quantity, category, activated, offer, description);
           if(name != '' && brand != '' && cost != '' && quantity != '' && category != '' && description != ''){
-            Meteor.call('insert_product', name, brand, cost, quantity, category, activated, offer, description, function(error, result){
+            Meteor.call('insert_product', name, brand, cost, parseInt(quantity), category, activated, offer, description, function(error, result){
               if(error){
                 console.log('No se pudo insertar el producto');
               }

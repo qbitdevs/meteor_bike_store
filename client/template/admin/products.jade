@@ -23,38 +23,39 @@ template(name="admin_products")
                     i.material-icons.edit-product edit
                   a.list_products
                     i.material-icons.delete-product delete
+  +footer_admin
               
 template(name='edit_product')
   .row
     form.col.s12
       .row
         .input-field.col.s6
-          input#product_name.validate(type='text' value='{{params.name}}')
+          input#product_name(type='text' value='{{params.name}}')
           label(for='product_name' class='active') Nombre
         .input-field.col.s6
-          select#product_brands
-            option(value='N', disabled='', selected='') Seleccionar marca
+          select#product_brands.browser-default
+            option(value='N', disabled='') Seleccionar marca
             each product_brands
               option(value='{{name}}', selected='{{brand_selected(name)}}') {{name}}
       .row
         .input-field.col.s6
-          input#product_cost.validate(type='text' value='{{params.cost}}')
+          input#product_cost(type='text' value='{{params.cost}}')
           label(for='product_cost' class='active') Precio
         .input-field.col.s6
-          input#product_quantity.validate(type='number' value='{{params.quantity}}')
+          input#product_quantity(type='number' value='{{params.quantity}}')
           label(for='product_quantity' class='active') Cantidad
       .row
         .input-field.col.s6
-          select#product_categories
-            option(value='N', disabled='', selected='') Seleccionar categoria
+          select#product_categories.browser-default
+            option(value='N', disabled='') Seleccionar categoria
             each product_categories
-              option(value='{{name}}', selected='{{category_selected(name)}}') {{name}}
+              option(value='{{name}}', selected='{{brand_selected(name)}}') {{name}}
         .input-field.col.s3
-          input#product_active.validate(type='checkbox' selected='{{params.activated}}')
-          label(for='product_active' class='active') Activado
+          input#product_active(type='checkbox')
+          label(for='product_active') Activado
         .input-field.col.s3
-          input#product_offer.validate(type='checkbox')
-          label(for='product_offer' class='active') Oferta
+          input#product_offer(type='checkbox')
+          label(for='product_offer') Oferta
       .row
         .input-field.col.s12
           textarea#product_description.materialize-textarea
@@ -66,31 +67,31 @@ template(name='create_product')
     form.col.s12
       .row
         .input-field.col.s6
-          input#product_name.validate(type='text')
+          input#product_name(type='text')
           label(for='product_name') Nombre
         .input-field.col.s6
-          select#product_brands
+          select#product_brands.browser-default
             option(value='N', disabled='', selected='') Seleccionar marca
             each product_brands
               option(value='{{name}}') {{name}}
       .row
         .input-field.col.s6
-          input#product_cost.validate(type='text')
+          input#product_cost(type='text')
           label(for='product_cost') Precio
         .input-field.col.s6
-          input#product_quantity.validate(type='number')
+          input#product_quantity(type='number')
           label(for='product_quantity') Cantidad
       .row
         .input-field.col.s6
-          select#product_categories
+          select#product_categories.browser-default
             option(value='N', disabled='', selected='') Seleccionar categoria
             each product_categories
               option(value='{{name}}') {{name}}
         .input-field.col.s3
-          input#product_active.validate(type='checkbox')
+          input#product_active(type='checkbox')
           label(for='product_active') Activado
         .input-field.col.s3
-          input#product_offer.validate(type='checkbox')
+          input#product_offer(type='checkbox')
           label(for='product_offer') Oferta
       .row
         .input-field.col.s12

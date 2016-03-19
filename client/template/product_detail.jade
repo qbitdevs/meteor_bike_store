@@ -9,7 +9,9 @@ template(name='product_detail')
           h1 
             | {{exist_product.name}}
           h4 $ 40.000
-          a.waves-effect.waves-light.btn Comprar
+          a#add_car.waves-effect.waves-light.btn Comprar
+          input#add_product_quantity(type='number')
+          label(for='add_product_quantity') Cantidad
           p.product-heading Der iRobot Roomba 651 - Der zuverlässige Helfer für Ihren Boden.
           .product-summary
             p

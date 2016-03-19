@@ -13,7 +13,41 @@
 .contact_margin{
   margin-top: 50px;
 }
+
 .list_products{
   cursor:pointer;
   cursor: hand;
+}
+
+#sidenav_left, #product{
+  margin-top: 20px;
+}
+
+.slider .indicators .indicator-item.active {
+  background-color: #1976D2 !important;
+}
+
+#contenedor{
+  margin-top: 10%;
+}
+
+#contenedor2{
+  margin-top: 7%;
+}
+
+input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label, input[type=email]:focus:not([readonly]) + label, input[type=url]:focus:not([readonly]) + label, input[type=time]:focus:not([readonly]) + label, input[type=date]:focus:not([readonly]) + label, input[type=datetime-local]:focus:not([readonly]) + label, input[type=tel]:focus:not([readonly]) + label, input[type=number]:focus:not([readonly]) + label, input[type=search]:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: #1976D2;
+}
+
+input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #1976D2;
+    box-shadow: none;
+}
+
+label input[type=checkbox]:checked + .lever {
+    background-color: #1976D2;
+}
+
+i.material-icons.active {
+    color: #1976D2 !important;
 }

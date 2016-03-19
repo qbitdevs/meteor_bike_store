@@ -1,33 +1,35 @@
 template(name="navbar_admin")
   .navbar-fixed
-    nav
+    nav.grey.lighten-3
       .nav-wrapper
-        a.brand-logo(href='#!') Logo
+        a.brand-logo(href='#!')
+          img.circle.responsive-img.logo-size(src='/images/logo2.png', alt='BikeStore')
         a.button-collapse(href='#', data-activates='mobile-demo')
           i.material-icons menu
-          a.brand-logo(href='#!') Logo
+          a.brand-logo(href='#!')
+            img.circle.responsive-img.logo-size(src='/images/logo2.png', alt='BikeStore')
         ul.right.hide-on-med-and-down
           li
-            a#home(href='!#')
+            a#home.blue-text.text-darken-2(href='/')
               | Inicio
           li
-            a#about_us(href='!#')
+            a#about_us.blue-text.text-darken-2(href='/about_us')
               | Nosotros
           li
-            a#contact(href='!#')
+            a#contact.blue-text.text-darken-2(href='/contact')
               | Contacto
           li
-            a#logout(href='!#') 
+            a#logout.blue-text.text-darken-2(href='!#') 
               i.material-icons exit_to_app
         ul#mobile-demo.side-nav
           li
-            a#home(href='!#')
+            a#home(href='/')
               | Inicio
           li
-            a#about_us(href='!#')
+            a#about_us(href='/about_us')
               | Nosotros
           li
-            a#contact(href='!#')
+            a#contact(href='/contact')
               | Contacto
           li
             a#logout(href='!#') 
