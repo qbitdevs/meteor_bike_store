@@ -1,0 +1,52 @@
+template(name='order_detail')
+  +navbar
+  .row
+    .col.l8.offset-l3.m12.s12
+      .row.detail-hero
+        .col.m8.s12
+          ul.collection
+            li.collection-item
+              each exist_order
+                li.collection-item
+                  | {{_id}}
+                li.collection-item
+                  ul.collection
+                    each products
+                      li.collection-item
+                        | Nombre: {{name}}
+                      li.collection-item
+                        | Cantidad: {{quantity}}
+                      li.collection-item
+                        | Costo unitario: {{unit_cost}}
+                      li.collection-item
+                        | Total: {{cost}}
+                  ul.collection
+                    li.collection-item
+                      | Pago
+                    li.collection-item
+                      | Banco: {{payment.bank}}
+                    li.collection-item
+                      | N&uacute;mero de pago: {{payment.number}}
+                    li.collection-item
+                      | Fecha de pago: {{payment.date}}
+                    unless payment.verified
+                      li.collection-item
+                        | No ha sido verificado el pago
+                    else
+                      li.collection-item
+                        | El pago fue verificado
+              a(href='../../admin/orders').btn.blue.darken-1
+                | regresar
+              unless order.payment.verified
+                span.to_left
+                  a#verified.btn.green.darken-1
+                    i.material-icons done
+                    | verificar pago
+              else
+                span.to_left
+                  a#verified.btn.red.darken-1
+                    i.material-icons error
+                    | anular verificacion
+              br
+              br
+  +footer

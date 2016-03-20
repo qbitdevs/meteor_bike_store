@@ -1,3 +1,20 @@
 template(name="admin")
   +navbar_admin
-  h1 hola
+  .row
+    .col.l8.offset-l2.m12.s12
+      h1 Administraci&oacute;n
+      .ul.collection
+        .li.collection-item
+          a(href='admin/categories')
+            | Categorias
+        .li.collection-item
+          a(href='admin/brands')
+            | Marcas
+        .li.collection-item
+          a(href='#')
+            | Pagos
+        .li.collection-item
+          a(href='admin/products')
+            | Productos
+  +footer_admin
+

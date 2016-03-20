@@ -160,5 +160,15 @@ Meteor.methods({
       }
     }
     return true;
-  }
+  },
+  'verify_payment': function(id){
+    var orders = Orders.findOne({_id: id});
+    orders.payment.verified = !orders.payment.verified;
+    Orders.update(orders._id,{
+          $set: {
+            payment: orders.payment
+          }
+        });
+    return true;
+  },
 });
