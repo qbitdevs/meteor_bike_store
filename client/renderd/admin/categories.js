@@ -1,6 +1,6 @@
 Template.create_category.onRendered(function(){
 	$('select').material_select();
 });
-Template.edit_categiry.onRendered(function(){
+Template.edit_category.onRendered(function(){
 	$('select').material_select();
 });
