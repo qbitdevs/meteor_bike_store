@@ -5,10 +5,16 @@ Template.product_detail.events({
     Meteor.call('add_product_car', Router.current().params.id, parseInt(quantity), function(error, result){
       if(error) console.log('Ocurrio algo al agregar producto a carrito');
     });
-    MaterializeModal.confirm({
+	MaterializeModal.form({
       title: "Compra de producto",
-      message: "Tu producto fue agregado al carrito de compras",
-      footerTemplate: "car_view"
+      bodyTemplate: "car_view",
+      submitLabel: '<a class="btn blue darken-2"> Ir al carrito</a>',
+      closeLabel: '<a class="btn blue darken-2" style="padding-bottom:1%"> Cancelar</a>',
+      callback: function(error, response) {
+        if (response.submit) {
+          window.location.href = '/product_car';
+        }
+      }
     });
-  }
+  },
 });
