@@ -2,40 +2,45 @@ template(name="admin_brands")
   +navbar_admin
   .row
     .col.s12
-      .fixed-action-btn
-        a#add_brands.right.btn-floating.btn-large.blue.darken-1
-          i.material-icons add
-      ul.collection
-        li.collection-item
-          unless exist_brands
-            p.center-align
-              br
-              h4 No hay marcas... 
-                i.medium.material-icons directions_bike
-              br
-          else
-            each brands
-              li.collection-item
-                | {{name}}
-                span.badge
-                  a.list_brands
-                    i.material-icons.edit-brand edit
-                  a.list_brands
-                    i.material-icons.delete-brand delete
+      h2.center-align Marcas
+      .admin-content2
+        .fixed-action-btn
+          a#add_brands.right.btn-floating.btn-large.blue.darken-1
+            i.material-icons add
+        ul.collection
+          li.collection-item
+            unless exist_brands
+              p.center-align
+                br
+                h4 No hay marcas... 
+                  i.medium.material-icons loyalty
+                br
+            else
+              each brands
+                li.collection-item
+                  | {{name}}
+                  span.badge
+                    a.list_brands
+                      i.material-icons.edit-brand edit
+                    a.list_brands
+                      i.material-icons.delete-brand delete
   +footer_admin
               
 template(name='edit_brand')
   .row
     form.col.s12
       .row
-        .input-field.col.s6
+        .input-field.col.s12
           input#brand_name(type='text' value='{{params.name}}')
           label(for='brand_name' class='active') Nombre
 
 template(name='create_brand')
   .row
-    input#brand_name(type='text')
-    label(for='brand_name') Nombre
+    form.col.s12
+      .row
+        .input-field.col.s12
+          input#brand_name(type='text')
+          label(for='brand_name') Nombre
 
 template(name='delete_brand')
   .row

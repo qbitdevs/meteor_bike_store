@@ -1,0 +1,28 @@
+template(name='product_car')
+  +navbar
+  .row
+    .col.l8.offset-l2.m12.s12
+      .product_car
+        each orders
+          table
+            thead
+              tr
+                th(data-field='id') Producto
+                th(data-field='name') Cantidad
+                th(data-field='price') Precio
+            tbody
+              each products
+                tr
+                  td {{name}}
+                  td {{quantity}}
+                  td {{product_cost}}
+          p
+            span 
+              | Total {{total}}
+            a#pay_car.waves-effect.waves-light.btn.right.blue.darked-2 Pagar
+        if no_orders
+          p
+            | Actualmente no posees compras
+
+    //+sidenav_right
+  +footer

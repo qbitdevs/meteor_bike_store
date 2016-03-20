@@ -1,4 +1,4 @@
-Session.set('category', '0');
+Session.setDefault('category', '0');
 
 Template.category.helpers({
   'productos': function(){

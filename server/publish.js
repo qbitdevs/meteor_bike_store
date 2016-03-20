@@ -31,7 +31,7 @@ Meteor.publish("orders", function() {
 		return;
 	}else{
 		if (!user.profile.admin){
-			return Orders.find({user_id: this.user_id});
+			return Orders.find({user_id: this.userId});
 		}
 		else{
 			return Orders.find();

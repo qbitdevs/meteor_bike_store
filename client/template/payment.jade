@@ -1,0 +1,20 @@
+template(name='payment')
+  .row
+    form.col.s12
+      .row
+        .input-field.col.s6
+          select#bank.browser-default
+            option(value='N', disabled='', selected='') Seleccionar banco
+            option(value='Banco Estado') Banco Estado
+            option(value='Santander') Santander
+            option(value='BCI') BCI
+        .input-field.col.s6
+          input#number(type='text')
+          label(for='number') Nro. Deposito
+      .row
+        .input-field.col.s6
+          input#amount(type='text')
+          label(for='amount') Monto
+        .input-field.col.s6
+          input#date.datepicker(type='date')
+          label(for='date')  Fecha

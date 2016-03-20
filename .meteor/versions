@@ -66,8 +66,11 @@ mquandalle:jade@0.4.9
 mquandalle:jade-compiler@0.4.5
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.39_1
+numeral:numeral@1.5.3_1
 observe-sequence@1.0.7
 ordered-dict@1.0.4
+percolate:momentum@0.7.2
+percolate:velocityjs@1.1.0
 poetic:materialize-scss@1.97.5_1
 promise@0.5.1
 random@1.0.5

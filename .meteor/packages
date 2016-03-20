@@ -26,3 +26,5 @@ email
 iron:router
 momentjs:moment
 meteorstuff:materialize-modal
+numeral:numeral
+percolate:momentum

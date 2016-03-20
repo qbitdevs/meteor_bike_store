@@ -2,37 +2,39 @@ template(name="admin_categories")
   +navbar_admin
   .row
     .col.s12
-      .fixed-action-btn
-        a#add_categories.right.btn-floating.btn-large.blue.darken-1
-          i.material-icons add
-      ul.collection
-        li.collection-item
-          unless exist_categories
-            p.center-align
-              br
-              h4 No hay categor&iacute;as... 
-                i.medium.material-icons directions_bike
-              br
-          else
-            each categories
-              li.collection-item
-                | {{name}}
-                span.badge
-                  a.list_categories
-                    i.material-icons.edit-category edit
-                  a.list_categories
-                    i.material-icons.delete-category delete
+      h2.center-align Categorias
+      .admin-content2
+        .fixed-action-btn
+          a#add_categories.right.btn-floating.btn-large.blue.darken-1
+            i.material-icons add
+        ul.collection
+          li.collection-item
+            unless exist_categories
+              p.center-align
+                br
+                h4 No hay categor&iacute;as... 
+                  i.medium.material-icons dashboard
+                br
+            else
+              each categories
+                li.collection-item
+                  | {{name}}
+                  span.badge
+                    a.list_categories
+                      i.material-icons.edit-category edit
+                    a.list_categories
+                      i.material-icons.delete-category delete
   +footer_admin
               
 template(name='edit_category')
   .row
-    .input-field.col.s6
+    .input-field.col.s12
       input#category_name(type='text' value='{{params.name}}')
       label(for='category_name' class='active') Nombre
 
 template(name='create_category')
   .row
-    .input-field.col.s6
+    .input-field.col.s12
       input#category_name(type='text')
       label(for='category_name') Nombre
 

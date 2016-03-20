@@ -6,33 +6,44 @@ template(name='product_detail')
         .col.m4.s12
           img.materialboxed(src='/images/accesories/1.jpg')
         .col.m8.s12
-          h1 
-            | {{exist_product.name}}
-          h4 $ 40.000
-          a#add_car.waves-effect.waves-light.btn Comprar
-          input#add_product_quantity(type='number')
-          label(for='add_product_quantity') Cantidad
-          p.product-heading Der iRobot Roomba 651 - Der zuverlässige Helfer für Ihren Boden.
-          .product-summary
-            p
-              | Beim iRobot Roomba 651 überzeugen Design, Handhabung und Leistung gleichermaßen - ein echter Kauftipp!
-          table.saugroboter-details(title='iRobot Roomba 651 bei Amazon.de kaufen')
-            tbody
-              tr
-                th Marca
-                td
-                  strong
-                    strike 
-                      | {{brand}}
-              tr
-                th Categoria
-                td
-                  strong
-                    | Traba
-              tr
-                th Envio:
-                td
-                  strong
-                    | gratis
+          .row
+            .col.l12.m12.s12
+              h1 
+                | {{exist_product.name}}
+          .row
+            .col.l3.m3.s12
+              h4 {{product_cost}}
+            .col.l3.m3.s12
+              label(for='add_product_quantity') Cantidad
+              input#add_product_quantity(type='number' value='1')
+            .col.l3.m3.s12
+              p
+                a#add_car.waves-effect.waves-light.btn.blue.darken-2 Al carrito
+          .row
+            .col.l12.m12.s12
+              .product-summary
+                p
+                  | {{exist_product.description}}
+              table.product-details(title='Producto')
+                tbody
+                  tr
+                    th Marca
+                    td
+                      strong
+                          | {{exist_product.brand}}
+                  tr
+                    th Categoria
+                    td
+                      strong
+                        | {{exist_product.category}}
+                  tr
+                    th Envio:
+                    td
+                      strong
+                        | Gratis
 
   +footer
+  
+template(name='car_view')
+  .modal-footer
+     a#submitButton.btn.blue.darken-2(href='/product_car', style='margin: 5px;') Ver carrito

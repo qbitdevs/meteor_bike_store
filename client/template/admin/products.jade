@@ -2,27 +2,28 @@ template(name="admin_products")
   +navbar_admin
   .row
     .col.s12
-      .fixed-action-btn
-        a#add_products.right.btn-floating.btn-large.blue.darken-1
-          i.material-icons add
-      ul.collection
-        li.collection-item
-          unless exist_products
-            p.center-align
-              br
-              h4 No hay productos... 
-                i.medium.material-icons directions_bike
-              br
-          else
-            each products
-              li.collection-item
-                | {{name}}
-                | {{quantity}}
-                span.badge
-                  a.list_products
-                    i.material-icons.edit-product edit
-                  a.list_products
-                    i.material-icons.delete-product delete
+      h2.center-align Productos
+      .admin-content2
+        .fixed-action-btn
+          a#add_products.right.btn-floating.btn-large.blue.darken-1
+            i.material-icons add
+        ul.collection
+          li.collection-item
+            unless exist_products
+              p.center-align
+                br
+                h4 No hay productos... 
+                  i.medium.material-icons directions_bike
+                br
+            else
+              each products
+                li.collection-item
+                  | {{name}}
+                  span.badge
+                    a.list_products
+                      i.material-icons.edit-product edit
+                    a.list_products
+                      i.material-icons.delete-product delete
   +footer_admin
               
 template(name='edit_product')
@@ -79,7 +80,7 @@ template(name='create_product')
           input#product_cost(type='text')
           label(for='product_cost') Precio
         .input-field.col.s6
-          input#product_quantity(type='number')
+          input#product_quantity(type='number'  value='1')
           label(for='product_quantity') Cantidad
       .row
         .input-field.col.s6

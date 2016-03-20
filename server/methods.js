@@ -105,9 +105,8 @@ Meteor.methods({
   },
   'add_product_car': function(product_id, quantity){
     var orders = Orders.findOne({user_id: Meteor.userId(), payment: { $exists: false}});
-    var product = Products.findOne({_id: product_id})
+    var product = Products.findOne({_id: product_id});
     if(orders == undefined){
-      console.log('entre');
       Orders.insert({
         user_id: Meteor.userId(),
         products: [
@@ -119,14 +118,14 @@ Meteor.methods({
             cost: quantity * product.cost ,
             add_at: new Date()
           }
-        ],
-        payment: {
-          amount: 2000,
-          bank: 'Banco Estado',
-          number: '12312321',
-          date: new Date(),
-          verified: false
-        }
+        ]
+        //payment: {
+          //amount: 2000,
+          //bank: 'Banco Estado',
+          //number: '12312321',
+          //date: new Date(),
+          //verified: false
+      //}
       });
     }else{
       var flag = false;
@@ -171,4 +170,17 @@ Meteor.methods({
         });
     return true;
   },
+  'insert_payment': function(id, bank, number, amount, date){
+    Orders.update(id,{
+      $set: {
+        payment: {
+          bank: bank,
+          number: number,
+          amount: amount,
+          date: new Date(date),
+          verified: false
+        }
+      }
+    })
+  }
 });

@@ -1,3 +1,11 @@
+.admin-content{
+  min-height: 450px;
+}
+
+.admin-content2{
+  min-height: 370px;
+}
+
 .logo-size{
   max-height: 60px;
 }
@@ -10,6 +18,11 @@
   margin-top: 50px;
 }
 
+.product_car{
+  margin-top: 50px;
+  min-height: 300px;
+}
+
 .contact_margin{
   margin-top: 50px;
 }
@@ -19,7 +32,7 @@
 }
 
 .font_green{
-  color:green; 
+  color:green;
 }
 
 .list_products, .list_brands, .list_categories{
@@ -27,8 +40,12 @@
   cursor: hand;
 }
 
-#sidenav_left, #product, #brands, #categories{
+#sidenav_left, #brands, #categories{
   margin-top: 20px;
+}
+
+#product{
+  margin-top: 27px;
 }
 
 .slider .indicators .indicator-item.active {

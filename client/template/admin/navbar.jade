@@ -10,27 +10,39 @@ template(name="navbar_admin")
             img.circle.responsive-img.logo-size(src='/images/logo2.png', alt='BikeStore')
         ul.right.hide-on-med-and-down
           li
-            a#home.blue-text.text-darken-2(href='/')
+            a#home.blue-text.text-darken-2(href='/admin')
               | Inicio
           li
-            a#about_us.blue-text.text-darken-2(href='/about_us')
-              | Nosotros
+            a#products.blue-text.text-darken-2(href='/admin/products')
+              | Productos
           li
-            a#contact.blue-text.text-darken-2(href='/contact')
-              | Contacto
+            a#nav_categories.blue-text.text-darken-2(href='/admin/categories')
+              | Categorias
+          li
+            a#nav_brands.blue-text.text-darken-2(href='/admin/brands')
+              | Marcas
+          li
+            a#orders.blue-text.text-darken-2(href='/admin/orders')
+              | Ordenes
           li
             a#logout.blue-text.text-darken-2(href='!#') 
               i.material-icons exit_to_app
         ul#mobile-demo.side-nav
           li
-            a#home(href='/')
+            a#home.blue-text.text-darken-2(href='/admin')
               | Inicio
           li
-            a#about_us(href='/about_us')
-              | Nosotros
+            a#products.blue-text.text-darken-2(href='/admin/products')
+              | Productos
           li
-            a#contact(href='/contact')
-              | Contacto
+            a#nav_categories.blue-text.text-darken-2(href='/admin/categories')
+              | Categorias
+          li
+            a#_nav_brands.blue-text.text-darken-2(href='/admin/brands')
+              | Marcas
+          li
+            a#orders.blue-text.text-darken-2(href='/admin/orders')
+              | Ordenes
           li
             a#logout(href='!#') 
               i.material-icons exit_to_app

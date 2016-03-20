@@ -2,22 +2,24 @@ template(name="admin_orders")
   +navbar_admin
   .row
     .col.s12
-      ul.collection
-        li.collection-item
-          unless exist_orders
-            p.center-align
-              br
-              h4 No hay ordenes... 
-                i.medium.material-icons directions_bike
-              br
-          else
-            each orders
-              li#order.collection-item
-                a(href='#')
-                  | {{_id}}
-                span.badge
-                  unless payment.verified
-                    h6.font_red Por verificar
-                  else
-                    h6.font_green Verificado
+      h2.center-align Ordenes de Compra
+      .admin-content2
+        ul.collection
+          li.collection-item
+            unless exist_orders
+              p.center-align
+                br
+                h4 No hay ordenes... 
+                  i.medium.material-icons attach_money
+                br
+            else
+              each orders
+                li#order.collection-item
+                  a(href='#')
+                    | {{_id}}
+                  span.badge
+                    unless payment.verified
+                      h6.font_red Por verificar
+                    else
+                      h6.font_green Verificado
   +footer_admin

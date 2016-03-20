@@ -1,20 +1,42 @@
 template(name="admin")
   +navbar_admin
   .row
-    .col.l8.offset-l2.m12.s12
-      h1 Administraci&oacute;n
-      .ul.collection
-        .li.collection-item
-          a(href='admin/categories')
-            | Categorias
-        .li.collection-item
-          a(href='admin/brands')
-            | Marcas
-        .li.collection-item
-          a(href='#')
-            | Pagos
-        .li.collection-item
-          a(href='admin/products')
-            | Productos
-  +footer_admin
+    .col.s12.m12.l12
+      h2.center-align Administraci&oacute;n
+  .row
+    .admin-content2
+      .col.s12.m6.l3
+        .card.blue.darken-3
+          .card-content.white-text.center-align
+            span.card-title Productos
+            p
+              i.material-icons.medium directions_bike
+          .card-action.center-align
+            a.white-text(href='admin/products') Ir a Productos
+      .col.s12.m6.l3
+        .card.blue.darken-3
+          .card-content.white-text.center-align
+            span.card-title Categorias
+            p
+              i.material-icons.medium dashboard
+          .card-action.center-align
+            a.white-text(href='admin/categories') Ir a Categorias
+      .col.s12.m6.l3
+        .card.blue.darken-3
+          .card-content.white-text.center-align
+            span.card-title Marcas
+            p
+              i.material-icons.medium loyalty
+          .card-action.center-align
+            a.white-text(href='admin/brands') Ir a Marcas
+      .col.s12.m6.l3
+        .card.blue.darken-3
+          .card-content.white-text.center-align
+            span.card-title Ordenes de Compra
+            p
+              i.material-icons.medium attach_money
+          .card-action.center-align
+            a.white-text(href='admin/orders') Ir a Ordenes de Compra
 
+
+  +footer_admin
