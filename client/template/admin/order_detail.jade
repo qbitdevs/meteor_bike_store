@@ -23,8 +23,8 @@ template(name='order_detail')
                           tr
                             td {{name}}
                             td {{quantity}}
-                            td.right-align {{product_cost}}
-                            td.right-align {{product_cost_total}}
+                            td {{product_cost}}
+                            td {{product_cost_total}}
                     table
                         thead
                           tr
@@ -37,8 +37,8 @@ template(name='order_detail')
                           tr
                             td {{payment.bank}}
                             td {{payment.number}}
-                            td.right-align {{payment_amount}}
-                            td.right-align {{payment_date}}
+                            td {{payment_amount}}
+                            td {{payment_date}}
                             unless payment.verified
                               td Pago no verificado
                             else
